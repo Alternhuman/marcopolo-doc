@@ -6,3 +6,6 @@ Diagramas de actividad
 
 .. image:: ../img/Marcod.*
     :align: center
+
+.. 
+	TODO: actividad de arranque

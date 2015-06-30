@@ -95,7 +95,11 @@ La API de MarcoPolo debe ser sencilla de comprender y utilizar.
 
 ..Diferentes tipos de mensajes
 
+.. 
+	Tokens en Polo binding
 
+.. 
+	Utilidades, definir todas
 
 Versión
 Autores
