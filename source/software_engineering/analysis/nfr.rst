@@ -53,7 +53,7 @@ Todos los mensajes transmitidos en el sistema deberán ser codificados en UTF-8 
 Configurabilidad
 ~~~~~~~~~~~~~~~~
 
-Se deberá facilitar la configurabilidad de MarcoPolo a través de archivos de configuración o cualquier sistema similar.
+Se deberá facilitar la configurabilidad de MarcoPolo a través de archivos de configuración o cualquier sistema similar. Estos archivos seguirán el formato definido en la RFC 822 [1]_
 
 Sincronización
 ~~~~~~~~~~~~~~
@@ -108,3 +108,5 @@ Urgencia
 Estado
 Estabilidad
 Comentarios
+
+.. [1] STANDARD FOR THE FORMAT OF ARPA INTERNET TEXT MESSAGES http://tools.ietf.org/html/rfc822.html
