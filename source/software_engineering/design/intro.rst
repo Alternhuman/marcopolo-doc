@@ -11,4 +11,9 @@ Se plantea el siguiente diseño de los componentes a alto nivel del sistema:
 .. image:: ../img/diseno_marcopolo.*
 	:align: center
 
-..Diseño iterativo
+.. TODODiseño iterativo
+
+.. toctree::
+	:maxdepth: 2
+
+	classes
