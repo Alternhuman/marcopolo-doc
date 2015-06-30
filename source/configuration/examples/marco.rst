@@ -1,7 +1,7 @@
 Marco configuration files
 =========================
 
-``marco.conf``
+``marco.cfg``
 --------------
 
-.. literalinclude:: ../../../../marcopolo/conffiles/marco/marco.conf
+.. literalinclude:: ../../../../marcopolo/etc/marcopolo/marco/marco.cfg

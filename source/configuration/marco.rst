@@ -1,7 +1,7 @@
 Marco configuration
 -------------------
 
-The following options are configurable in the file ``/etc/marcopolo/marco/marco.conf``:
+The following options are configurable in the file ``/etc/marcopolo/marco/marco.cfg``:
 
 - ``RETRIES``: If the request does not find any node (or the specified amount of nodes, it will be sent again as many times as the value of the parameter. If not defined, its value is 0).
 
