@@ -124,6 +124,153 @@ CU4-Error
 - **Estabilidad**: Estable
 - **Comentarios**
 
+CU-5 Publicar un servicio
+~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+- **Versión**: 
+- **Autores**: 
+- **Fuentes**: 
+- **Objetivos asociados**: 
+- **Requisitos asociados**: 
+- **Descripción**: Un usuario con los privilegios adecuados podrá publicar un servicio para todo el sistema que será incluido en la lista de servicios a ofrecer.
+- **Precondición**: Una instancia de Polo debe estar ejecutándose en el sistema.
+- **Secuencia normal**:
+
+    1. El usuario o aplicación solicita la publicación de un servicio a través de los diferentes mecanismos de interconexión presentes, indicando que el servicio debe alcanzar a todo el sistema.
+    2. Dicho componente verifica que todos los parámetros son correctos y solicita la inclusión a la instancia de Polo.
+    3. Esta instancia valida de nuevo los parámetros y la identidad del usuario que realiza la operación. En caso de que sean correctos (el identificador no está repetido y es válido, los parámetros adicionales son válidos...) se añade a la lista de servicios a ofrecer. Si el usuario no es válido o no cuenta con los suficientes privilegios, un error es lanzado y comienza el caso de uso RF4.
+    4. La instancia de Polo retorna el identificador final del servicio.
+- **Poscondición**: El servicio es publicado.
+- **Excepciones**:
+
+    + **No se puede establecer una conexión con la instancia de Polo**: En este caso el conector envía un mensaje de error específico para cada plataforma (excepción, código de estado...) indicando esta situación, con el objetivo de que la aplicación pueda recuperarse del error (asumir unos valores por defecto que sustituyan a los datos solicitados, realizar la operación de nuevo...).
+    + **Los parámetros son inválidos**: Generalmente el mecanismo de interconexión detectará este tipo de situaciones, retornando un mensaje de error (a través de una excepción, un código de retorno) al usuario. En caso de que el error sea detectado por la instancia de Polo, esta solicitará al conector que informe al usuario, aprovechando el mismo método de notificación.
+    + **El identificador ya se encuentra en uso**: A través del mecanismo de notificación de errores utilizado en el resto de excepciones se indica esta situación. Sin embargo, el tipo de error deberá ser diferente (no se viola ninguna regla semántica, simplemente se solicita la inclusión de un identificador de servicio ya publicado).
+- **Rendimiento**
+- **Frecuencia**
+- **Importancia**: Alta
+- **Urgencia**: Alta
+- **Estado**: Completo
+- **Estabilidad**: Estable
+- **Comentarios**: Este tipo de servicios son conocidos como "raíz" (*root*), y no incluyen en el identificador el nombre del usuario que los ha publicado. Si bien el valor de retorno no es de importancia en este tipo de servicios (pues es idéntico al del identificador solicitado), se incluye para homogeneizar los diferentes puntos de entrada, posibilitando en una misma función la publicación de diferentes tipos de servicios. 
+
+CU-6 Publicar un servicio de usuario
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- **Versión**: 
+- **Autores**: 
+- **Fuentes**: 
+- **Objetivos asociados**: 
+- **Requisitos asociados**: 
+- **Descripción**: Se contempla la posibilidad de que cualquier usuario pueda publicar servicios aprovechando una instancia de Polo local. Sin embargo, estos servicios contarán con una serie de limitaciones respecto a los servicios publicados por usuarios sin privilegios.
+- **Precondición**: Una instancia de Polo debe estar ejecutándose en el sistema.
+- **Secuencia normal**:
+
+    1. El usuario o aplicación solicita la publicación de un servicio a través de los diferentes mecanismos de interconexión presentes.
+    2. Se realizan los pasos 2 y 3 del caso de uso **CU-5**.
+    3. La instancia de Polo retorna el identificador final del servicio, que consistirá en una combinación del nombre del usuario (u otra cadena distintiva) con el identificador del servicio. 
+- **Poscondición**: El servicio es publicado.
+- **Excepciones**:
+
+     + **No se puede establecer una conexión con la instancia de Polo**: En este caso el conector envía un mensaje de error específico para cada plataforma (excepción, código de estado...) indicando esta situación, con el objetivo de que la aplicación pueda recuperarse del error (asumir unos valores por defecto que sustituyan a los datos solicitados, realizar la operación de nuevo...).
+    + **Los parámetros son inválidos**: Generalmente el mecanismo de interconexión detectará este tipo de situaciones, retornando un mensaje de error (a través de una excepción, un código de retorno) al usuario. En caso de que el error sea detectado por la instancia de Polo, esta solicitará al conector que informe al usuario, aprovechando el mismo método de notificación.
+    + **El identificador ya se encuentra en uso**: A través del mecanismo de notificación de errores utilizado en el resto de excepciones se indica esta situación. Sin embargo, el tipo de error deberá ser diferente (no se viola ninguna regla semántica, simplemente se solicita la inclusión de un identificador de servicio ya publicado).
+- **Rendimiento**
+- **Frecuencia**
+- **Importancia**: Alta
+- **Urgencia**: Alta
+- **Estado**: Completo
+- **Estabilidad**: Estable
+- **Comentarios**
+
+CU-7 Eliminar un servicio
+~~~~~~~~~~~~~~~~~~~~~~~~~
+    
+- **Versión**: 
+- **Autores**: 
+- **Fuentes**: 
+- **Objetivos asociados**: 
+- **Requisitos asociados**: 
+- **Descripción**: En caso de que una aplicación (generalmente, la ofertante) o un usuario (generalmente el propietario) decidan eliminar un servicio de la lista de ofrecidos, la instancia local de Polo deberá realizar dicha operación. 
+- **Precondición**: Una instancia de Polo debe estar ejecutándose en el sistema.
+- **Secuencia normal**:
+
+    1. Se solicita a través de uno de los mecanismos de interconexión la eliminación de un servicio, indicando dicha acción a uno de los elementos de interconexión presentes, adjuntando el identificador para indicar qué servicio eliminar.
+    2. Dicho componente verifica que todos los parámetros son correctos y solicita la inclusión a la instancia de Polo.
+    3. Esta instancia valida de nuevo los parámetros y la identidad del usuario que realiza la operación. En caso de que sean correctos (el servicio a eliminar está publicado) se elimina de la lista de servicios a ofrecer. Si el usuario no es el "propietario" del servicio o no cuenta con los suficientes privilegios, un error es lanzado y comienza el caso de uso RF4.
+    4. El usuario o aplicación es notificado del resultado de la operación.
+- **Poscondición**: El servicio es eliminado de la lista de servicios a ofrecer.
+- **Excepciones**:
+
+    + **No se puede establecer una conexión con la instancia de Polo**: En este caso el conector envía un mensaje de error específico para cada plataforma (excepción, código de estado...) indicando esta situación, con el objetivo de que la aplicación pueda recuperarse del error (asumir unos valores por defecto que sustituyan a los datos solicitados, realizar la operación de nuevo...).
+    + **Los parámetros son inválidos**: Generalmente el mecanismo de interconexión detectará este tipo de situaciones, retornando un mensaje de error (a través de una excepción, un código de retorno) al usuario. En caso de que el error sea detectado por la instancia de Polo, esta solicitará al conector que informe al usuario, aprovechando el mismo método de notificación.
+- **Rendimiento**
+- **Frecuencia**
+- **Importancia**: Alta
+- **Urgencia**: Alta
+- **Estado**: Completo
+- **Estabilidad**: Estable
+- **Comentarios**
+
+
+CU-8 Creación de un servicio estático
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- **Versión**: 
+- **Autores**: 
+- **Fuentes**: 
+- **Objetivos asociados**: 
+- **Requisitos asociados**: 
+- **Descripción**: Un servicio estático es aquel que es registrado en un fichero de texto, y por tanto es persistente (en caso de que el sistema sea reiniciado no se pierde la información). Todos los usuarios podrán publicar este tipo de servicios, sujetos a las mismas restricciones que el resto de variedades, a partir de ahora denominados servicios "dinámicos".
+- **Precondición**
+- **Secuencia normal**:
+
+    1. Un usuario o aplicación crea un fichero con la estructura requerida para que la instancia de Polo pueda procesarla (ver NFR ).
+    2. En caso de que el servicio sea raíz, se deberá recargar o reiniciar la instancia de Polo (si no se encuentra activa, se deberá iniciar). En caso contrario, el sistema procesará el servicio en el momento en el que se solicite el mismo (de esta forma se evita el sondeo de todos los directorios de usuario).
+    3. Si los parámetros son válidos, el servicio es publicado. En caso contrario una entrada en un registro de errores es almacenada.
+- **Poscondición**: El servicio es publicado.
+- **Excepciones**:
+
+    + Si la sintaxis es inválida, el servicio no es publicado y se almacena un mensaje de error en un registro..
+- **Rendimiento**
+- **Frecuencia**
+- **Importancia**: Alta
+- **Urgencia**: Alta
+- **Estado**: Completo
+- **Estabilidad**: Estable
+- **Comentarios**
+
+.. TODO: CU8, ver NFR
+
+CU-9 Modificar servicio
+~~~~~~~~~~~~~~~~~~~~~~~
+
+- **Versión**: 
+- **Autores**: 
+- **Fuentes**: 
+- **Objetivos asociados**: 
+- **Requisitos asociados**: 
+- **Descripción**: La información adicional que un servicio ofrece puede ser modificada tras ser publicado.
+- **Precondición**: El servicio debe estar publicado en el sistema.
+- **Secuencia normal**:
+    
+    1. Se solicita a través de uno de los mecanismos de interconexión la modificación de un servicio, indicando dicha acción a uno de los elementos de interconexión presentes. En la invocación se incluyen los valores a incluir.
+    2. Dicho componente verifica que todos los parámetros son correctos y solicita la inclusión a la instancia de Polo.
+    3. Esta instancia valida de nuevo los parámetros y la identidad del usuario que realiza la operación. En caso de que sean correctos (el servicio a modificar está publicado) se realiza la acción solicitada. Si el usuario no es el "propietario" del servicio o no cuenta con los suficientes privilegios, un error es lanzado y comienza el caso de uso RF4. En caso de que sea un servicio estático, los nuevos valores se almacenarán en el fichero.
+- **Poscondición**: El servicio es modificado.
+- **Excepciones**: 
+    
+    + **No se puede establecer una conexión con la instancia de Polo**: En este caso el conector envía un mensaje de error específico para cada plataforma (excepción, código de estado...) indicando esta situación, con el objetivo de que la aplicación pueda recuperarse del error (asumir unos valores por defecto que sustituyan a los datos solicitados, realizar la operación de nuevo...).
+    + **Los parámetros son inválidos**: Generalmente el mecanismo de interconexión detectará este tipo de situaciones, retornando un mensaje de error (a través de una excepción, un código de retorno) al usuario. En caso de que el error sea detectado por la instancia de Polo, esta solicitará al conector que informe al usuario, aprovechando el mismo método de notificación.
+- **Rendimiento**
+- **Frecuencia**
+- **Importancia**: Media
+- **Urgencia**: Media
+- **Estado**: Completo
+- **Estabilidad**: Estable
+- **Comentarios**
+
+
 .. 
     - **Versión**: 
     - **Autores**: 
@@ -143,33 +290,7 @@ CU4-Error
     - **Estabilidad**
     - **Comentarios**
 
-Publicar un servicio raíz
--------------------------
- 
-- **Versión**: 
-- **Autores**: 
-- **Fuentes**: 
-- **Objetivos asociados**: 
-- **Requisitos asociados**: 
-- **Descripción**: Un servicio raíz es aquel que es publicado para todo el sistema, sin que se incluya en el identificador el nombre del usuario.
-- **Precondición**: Una instancia de Polo debe estar ejecutándose en el sistema.
-- **Secuencia normal**
-- **Poscondición**
-- **Excepciones**
-- **Rendimiento**
-- **Frecuencia**
-- **Importancia**
-- **Urgencia**
-- **Estado**
-- **Estabilidad**
-- **Comentarios**
-
-Publicar un servicio de usuario
--------------------------------
-
-Eliminar un servicio
---------------------
-
+Consultar información sobre un servicio
 
 Diagrama de casos de uso
 ~~~~~~~~~~~~~~~~~~~~~~~~
