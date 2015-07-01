@@ -1,8 +1,56 @@
 Objetivos
----------
+=========
 
-1. El sistema debe ser capaz de identificar qué nodos y servicios existen en una red
+OBJ-1: Descubrimiento de servicios y nodos
+------------------------------------------
 
-2. Simplicidad
+- **Versión**
+- **Autores**
+- **Fuentes**
+- **Descripción**: El componente Marco debe ser capaz de identificar qué nodos y servicios existen en una red.
+- **Subobjetivos**
+- **Importancia**: Muy alta
+- **Urgencia**: Alta
+- **Estado**: Completo
+- **Estabilidad**: Estable
+- **Comentarios**
 
-MarcoPolo debe conseguir un alto grado de versatilidad y aplicabilidad en un gran rango de aplicaciones. A fin de conseguir este objetivo, la simplicidad del sistema construido es clave. Esto conlleva el desacoplamiento y delegación de gran parte de la funcionalidad a otras capas superiores, independientes del protocolo, pero que aprovechan su funcionalidad, en lugar de ser integradas en el mismo (ver \ref{marcopolo}).
+OBJ-2: Publicación de servicios y nodos
+---------------------------------------
+
+- **Versión**
+- **Autores**
+- **Fuentes**
+- **Descripción**: El componente Polo deberá proveer la información relativa a los servicios y nodos a publicitar.
+- **Subobjetivos**
+- **Importancia**: Muy alta
+- **Urgencia**: Alta
+- **Estado**: Completo
+- **Estabilidad**: Estable
+- **Comentarios**
+
+OBJ-3: Interconexión
+--------------------
+
+- **Versión**
+- **Autores**
+- **Fuentes**
+- **Descripción**: La funcionalidad de cada uno de los roles deberá ser consumible por otras aplicaciones a través de mecanismos de conexión entre las mismas, a partir de ahora denominados *bindings*
+- **Subobjetivos**
+- **Importancia**: Alta
+- **Urgencia**: Alta
+- **Estado**: Completo
+- **Estabilidad**: Estable
+- **Comentarios**
+
+.. 
+    - **Versión**
+    - **Autores**
+    - **Fuentes**
+    - **Descripción**
+    - **Subobjetivos**
+    - **Importancia**
+    - **Urgencia**
+    - **Estado**
+    - **Estabilidad**
+    - **Comentarios**

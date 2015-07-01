@@ -6,12 +6,13 @@ En la fase de análisis se definen los diferentes aspectos de interés sobre el 
 .. toctree::
     :maxdepth: 2
 
-    classes
+    problemdomain
+    goals
     actors
     fr
-    goals
-    informationrequirements
+    ir
     nfr
-    problemdomain
+    classes
     communication
-    activity
+    activity_marco
+    activity_polo

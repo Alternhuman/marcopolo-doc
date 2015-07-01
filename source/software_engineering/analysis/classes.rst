@@ -10,7 +10,7 @@ Paquete Marco
     :align: center
     :alt: Paquete de análisis Marco
 
-El paquete se compone de una interfaz (*binder*) que actuará como interfaz para que las diferentes aplicaciones puedan utilizar la funcionalidad de la aplicación. Una clase de control realizará las operaciones solicitadas y una tercera procesará los diferentes objetos de negocio que se obtienen de la realización de estas operaciones.
+El paquete se compone de una interfaz (*binder*) que actuará como frontera para que las diferentes aplicaciones puedan utilizar la funcionalidad de la aplicación. Una clase de control realizará las operaciones solicitadas y una tercera procesará los diferentes objetos de negocio que se obtienen de la realización de estas operaciones.
 
 Paquete Polo
 ------------
@@ -19,7 +19,7 @@ Paquete Polo
     :align: center
     :alt: Paquete de análisis Polo
 
-El paquete Polo cuenta con dos interfaces claramente diferenciadas. Una de ellas actúa como *binder* para que la funcionalidad ofrecida pueda ser aprovechada por las diferentes aplicaciones presentes en el sistema, siendo la otra la interfaz que procesa los diferentes mensajes de consulta.
+El paquete Polo cuenta con dos interfaces claramente diferenciadas. Una de ellas actúa como *binder* para que la funcionalidad ofrecida pueda ser aprovechada por las diferentes aplicaciones presentes en el sistema, siendo la otra la interfaz que procesa los diferentes mensajes de consulta. Una clase de control aglutina todas las instancias del rol Polo, independientes entre sí, que controlan las diferentes entidades (servicios).
 
 Bindings
 --------
