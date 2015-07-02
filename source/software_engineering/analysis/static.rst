@@ -1,5 +1,5 @@
-Clases de análisis
-==================
+Vista estática de la aplicación
+===============================
 
 Una vista estática de la arquitectura permite conceptualizar las diferentes propiedades de los diferentes componentes así como las relaciones entre los mismos. La arquitectura de MarcoPolo se compone de los siguientes subpaquetes:
 

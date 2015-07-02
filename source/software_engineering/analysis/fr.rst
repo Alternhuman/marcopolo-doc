@@ -1,7 +1,7 @@
 Requisitos funcionales
 ----------------------
 
-CU-1: Descubrimiento de nodos
+RF-1: Descubrimiento de nodos
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Versión**: 
@@ -14,11 +14,11 @@ CU-1: Descubrimiento de nodos
 - **Secuencia normal**:
 
     1. A través de los diferentes mecanismos de interconexión, una aplicación o usuario solicita el descubrimiento de nodos presentes en la red.
-    2. El mecanismo de interconexión recibe los diferentes parámetros y los procesa. En caso de que la evaluación no sea satisfactoria, se inicia el caso de uso **CU-4** y posteriormente la ejecución finaliza. En caso contrario, se continúa la secuencia.
+    2. El mecanismo de interconexión recibe los diferentes parámetros y los procesa. En caso de que la evaluación no sea satisfactoria, se inicia el caso de uso **RF-4** y posteriormente la ejecución finaliza. En caso contrario, se continúa la secuencia.
     3. El mecanismo de interconexión envía los parámetros a la instancia local de Marco, que realiza la acción solicitada.
     4. Transcurre un pequeño tiempo de espera para las respuestas de los nodos presentes en la red. Este es definido por el usuario, o en caso de que no sea indicado se utiliza un tiempo por defecto. Durante la espera son procesadas las respuestas que se reciben. 
     5. La instancia procesa los datos y los envía a la instancia del conector con la aplicación.
-    6. El conector determina si los datos son válidos y los retorna a la aplicación. En caso contrario, comienza el caso de uso **CU-4**.
+    6. El conector determina si los datos son válidos y los retorna a la aplicación. En caso contrario, comienza el caso de uso **RF-4**.
 
 - **Poscondición**: Se han descubierto los diferentes nodos presentes en el sistema.
 - **Excepciones**
@@ -32,7 +32,7 @@ CU-1: Descubrimiento de nodos
 - **Estabilidad**: Estable
 - **Comentarios**
 
-CU-2: Descubrimiento de servicios
+RF-2: Descubrimiento de servicios
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Versión**: 
@@ -45,11 +45,11 @@ CU-2: Descubrimiento de servicios
 - **Secuencia normal**:
 
     1. A través de los diferentes mecanismos de interconexión, una aplicación o usuario solicita el descubrimiento de todos los servicios que un nodo presente en la red ofrece.
-    2. El mecanismo de interconexión recibe los diferentes parámetros y los procesa. En caso de que la evaluación no sea satisfactoria, se inicia el caso de uso **CU-4** y posteriormente la ejecución finaliza. En caso contrario, se continúa la secuencia.
+    2. El mecanismo de interconexión recibe los diferentes parámetros y los procesa. En caso de que la evaluación no sea satisfactoria, se inicia el caso de uso **RF-4** y posteriormente la ejecución finaliza. En caso contrario, se continúa la secuencia.
     3. El mecanismo de interconexión envía los parámetros a la instancia local de Marco, que realiza la acción solicitada.
     4. Transcurre un pequeño tiempo de espera para las respuestas de los nodos presentes en la red.
     5. La instancia procesa los datos y los envía a la instancia del conector con la aplicación.
-    6. El conector determina si los datos son válidos y los retorna a la aplicación. En caso contrario, comienza el caso de uso **CU-4**.
+    6. El conector determina si los datos son válidos y los retorna a la aplicación. En caso contrario, comienza el caso de uso **RF-4**.
     7. Se retornan los datos recogidos o una lista vacía en caso de la búsqueda haya sido infructuosa.
     
 - **Poscondición**: Se han descubierto todos los nodos presentes en el sistema que ofrecen el servicio solicitado.
@@ -66,7 +66,7 @@ CU-2: Descubrimiento de servicios
 - **Comentarios**
 
 
-CU-3: Consulta a un nodo
+RF-3: Consulta a un nodo
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Versión**: 
@@ -79,12 +79,12 @@ CU-3: Consulta a un nodo
 - **Secuencia normal**:
     
     1. A través de los diferentes mecanismos de interconexión, una aplicación o usuario solicita el descubrimiento todos los nodos presentes en la red ofertantes de un servicio identificado por una cadena de texto.
-    2. El mecanismo de interconexión recibe los diferentes parámetros y los procesa. En caso de que la evaluación no sea satisfactoria, se inicia el caso de uso **CU-4** y posteriormente la ejecución finaliza. En caso contrario, se continúa la secuencia.
+    2. El mecanismo de interconexión recibe los diferentes parámetros y los procesa. En caso de que la evaluación no sea satisfactoria, se inicia el caso de uso **RF-4** y posteriormente la ejecución finaliza. En caso contrario, se continúa la secuencia.
     3. El mecanismo de interconexión envía los parámetros a la instancia local de Marco, que realiza la acción solicitada, enviando una petición al nodo solicitante.
     4. Transcurre un pequeño tiempo de espera para la respuesta del nodo. 
     5. En caso de que el nodo consultado responda, se procesa la lista de servicios incluida en el mensaje.
     6. La instancia procesa los datos y los envía a la instancia del conector con la aplicación.
-    7. El conector determina si los datos son válidos y los retorna a la aplicación. En caso contrario, comienza el caso de uso **CU-4**.
+    7. El conector determina si los datos son válidos y los retorna a la aplicación. En caso contrario, comienza el caso de uso **RF-4**.
 - **Poscondición**: Se han descubierto los servicios ofrecidos por un nodo.
 - **Excepciones**: 
 
@@ -98,7 +98,7 @@ CU-3: Consulta a un nodo
 - **Estabilidad**: Estable
 - **Comentarios**
 
-CU-4: Error
+RF-4: Error
 ~~~~~~~~~~~
 
 - **Versión**: 
@@ -124,7 +124,7 @@ CU-4: Error
 - **Estabilidad**: Estable
 - **Comentarios**
 
-CU-5 Publicar un servicio
+RF-5 Publicar un servicio
 ~~~~~~~~~~~~~~~~~~~~~~~~~
  
 - **Versión**: 
@@ -138,7 +138,7 @@ CU-5 Publicar un servicio
 
     1. El usuario o aplicación solicita la publicación de un servicio a través de los diferentes mecanismos de interconexión presentes, indicando que el servicio debe alcanzar a todo el sistema.
     2. Dicho componente verifica que todos los parámetros son correctos y solicita la inclusión a la instancia de Polo.
-    3. Esta instancia valida de nuevo los parámetros y la identidad del usuario que realiza la operación. En caso de que sean correctos (el identificador no está repetido y es válido, los parámetros adicionales son válidos...) se añade a la lista de servicios a ofrecer. Si el usuario no es válido o no cuenta con los suficientes privilegios, un error es lanzado y comienza el caso de uso **CU-4**.
+    3. Esta instancia valida de nuevo los parámetros y la identidad del usuario que realiza la operación. En caso de que sean correctos (el identificador no está repetido y es válido, los parámetros adicionales son válidos...) se añade a la lista de servicios a ofrecer. Si el usuario no es válido o no cuenta con los suficientes privilegios, un error es lanzado y comienza el caso de uso **RF-4**.
     4. La instancia de Polo retorna el identificador final del servicio.
 - **Poscondición**: El servicio es publicado.
 - **Excepciones**:
@@ -154,7 +154,7 @@ CU-5 Publicar un servicio
 - **Estabilidad**: Estable
 - **Comentarios**: Este tipo de servicios son conocidos como "raíz" (*root*), y no incluyen en el identificador el nombre del usuario que los ha publicado. Si bien el valor de retorno no es de importancia en este tipo de servicios (pues es idéntico al del identificador solicitado), se incluye para homogeneizar los diferentes puntos de entrada, posibilitando en una misma función la publicación de diferentes tipos de servicios. 
 
-CU-6 Publicar un servicio de usuario
+RF-6 Publicar un servicio de usuario
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Versión**: 
@@ -167,7 +167,7 @@ CU-6 Publicar un servicio de usuario
 - **Secuencia normal**:
 
     1. El usuario o aplicación solicita la publicación de un servicio a través de los diferentes mecanismos de interconexión presentes.
-    2. Se realizan los pasos 2 y 3 del caso de uso **CU-5**.
+    2. Se realizan los pasos 2 y 3 del caso de uso **RF-5**.
     3. La instancia de Polo retorna el identificador final del servicio, que consistirá en una combinación del nombre del usuario (u otra cadena distintiva) con el identificador del servicio. 
 - **Poscondición**: El servicio es publicado.
 - **Excepciones**:
@@ -183,7 +183,7 @@ CU-6 Publicar un servicio de usuario
 - **Estabilidad**: Estable
 - **Comentarios**
 
-CU-7 Eliminar un servicio
+RF-7 Eliminar un servicio
 ~~~~~~~~~~~~~~~~~~~~~~~~~
     
 - **Versión**: 
@@ -197,7 +197,7 @@ CU-7 Eliminar un servicio
 
     1. Se solicita a través de uno de los mecanismos de interconexión la eliminación de un servicio, invocando para realizar dicha acción a uno de los elementos de interconexión presentes, adjuntando el identificador para indicar qué servicio eliminar.
     2. Dicho componente verifica que todos los parámetros son correctos y solicita la inclusión a la instancia de Polo.
-    3. Esta instancia valida de nuevo los parámetros y la identidad del usuario que realiza la operación. En caso de que sean correctos (el servicio a eliminar está publicado) se elimina de la lista de servicios a ofrecer. Si el usuario no es el "propietario" del servicio o no cuenta con los suficientes privilegios, un error es lanzado y comienza el caso de uso **CU-4**.
+    3. Esta instancia valida de nuevo los parámetros y la identidad del usuario que realiza la operación. En caso de que sean correctos (el servicio a eliminar está publicado) se elimina de la lista de servicios a ofrecer. Si el usuario no es el "propietario" del servicio o no cuenta con los suficientes privilegios, un error es lanzado y comienza el caso de uso **RF-4**.
     4. El usuario o aplicación es notificado del resultado de la operación.
 - **Poscondición**: El servicio es eliminado de la lista de servicios a ofrecer.
 - **Excepciones**:
@@ -212,7 +212,7 @@ CU-7 Eliminar un servicio
 - **Estabilidad**: Estable
 - **Comentarios**
 
-CU-8: Eliminar servicio de usuario
+RF-8: Eliminar servicio de usuario
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Versión**: 
@@ -225,7 +225,7 @@ CU-8: Eliminar servicio de usuario
 - **Secuencia normal**:
 
     1. Se solicita a través de uno de los mecanismos de interconexión la eliminación de un servicio, invocando para realizar dicha acción a uno de los elementos de interconexión presentes, adjuntando el identificador para indicar qué servicio eliminar e indicando que el servicio no es de carácter global.
-    2. Se realiza la secuencia de pasos 2 a 4 del caso de uso **CU-7**.
+    2. Se realiza la secuencia de pasos 2 a 4 del caso de uso **RF-7**.
 - **Poscondición**: El servicio es eliminado de la lista de servicios a ofrecer.
 - **Excepciones**:
     
@@ -239,7 +239,7 @@ CU-8: Eliminar servicio de usuario
 - **Estabilidad**: Estable
 - **Comentarios**
 
-CU-9 Creación de un servicio estático
+RF-9 Creación de un servicio estático
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Versión**: 
@@ -268,7 +268,7 @@ CU-9 Creación de un servicio estático
 
 .. TODO: CU8, ver NFR
 
-CU-10 Modificar servicio
+RF-10 Modificar servicio
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Versión**: 
@@ -282,7 +282,7 @@ CU-10 Modificar servicio
     
     1. Se solicita a través de uno de los mecanismos de interconexión la modificación de un servicio, indicando dicha acción a uno de los elementos de interconexión presentes. En la invocación se incluyen los valores a incluir.
     2. Dicho componente verifica que todos los parámetros son correctos y solicita la inclusión a la instancia de Polo.
-    3. Esta instancia valida de nuevo los parámetros y la identidad del usuario que realiza la operación. En caso de que sean correctos (el servicio a modificar está publicado) se realiza la acción solicitada. Si el usuario no es el "propietario" del servicio o no cuenta con los suficientes privilegios, un error es lanzado y comienza el caso de uso **CU-4**. En caso de que sea un servicio estático, los nuevos valores se almacenarán en el fichero.
+    3. Esta instancia valida de nuevo los parámetros y la identidad del usuario que realiza la operación. En caso de que sean correctos (el servicio a modificar está publicado) se realiza la acción solicitada. Si el usuario no es el "propietario" del servicio o no cuenta con los suficientes privilegios, un error es lanzado y comienza el caso de uso **RF-4**. En caso de que sea un servicio estático, los nuevos valores se almacenarán en el fichero.
 - **Poscondición**: El servicio es modificado.
 - **Excepciones**: 
     
@@ -296,7 +296,7 @@ CU-10 Modificar servicio
 - **Estabilidad**: Estable
 - **Comentarios**
 
-CU-11 Modificar servicio de usuario
+RF-11 Modificar servicio de usuario
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Versión**: 
@@ -309,7 +309,7 @@ CU-11 Modificar servicio de usuario
 - **Secuencia normal**:
 
     1. Se solicita a través de uno de los mecanismos de interconexión la modificación de un servicio, indicando dicha acción a uno de los elementos de interconexión presentes. En la invocación se incluyen los valores a incluir.
-    2. Se ejecutan los pasos 2 y 3 del caso de uso **CU-10**.
+    2. Se ejecutan los pasos 2 y 3 del caso de uso **RF-10**.
 - **Poscondición**: El servicio es modificado.
 - **Excepciones**:
 
@@ -323,7 +323,7 @@ CU-11 Modificar servicio de usuario
 - **Estabilidad**: Estable
 - **Comentarios**
 
-CU-12: Proceso de datos recibidos
+RF-12: Proceso de datos recibidos
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Versión**: 
@@ -337,11 +337,11 @@ CU-12: Proceso de datos recibidos
 
     1. Al recibir una cadena de texto, esta es procesada siguiendo las especificaciones del requisito no funcional **NFR 9** (todas las cadenas siguen el formato JSON).
     2. La cadena es convertida en una estructura de datos nativa del lenguaje en el que se implementa la funcionalidad.
-    3. Se extraen de dicha estructura los datos de relevancia para el solicitante. En caso de que no existan, se emitirá un error, comenzando el caso de uso **CU-4**.
+    3. Se extraen de dicha estructura los datos de relevancia para el solicitante. En caso de que no existan, se emitirá un error, comenzando el caso de uso **RF-4**.
 - **Poscondición**: Los datos han sido extraídos.
 - **Excepciones**: 
 
-    + En caso de que el procesamiento de la cadena emita un error (por fallos en la estructura de la misma), comienza el caso de uso **CU-4**.
+    + En caso de que el procesamiento de la cadena emita un error (por fallos en la estructura de la misma), comienza el caso de uso **RF-4**.
 - **Rendimiento**
 - **Frecuencia**
 - **Importancia**: Media
@@ -350,7 +350,7 @@ CU-12: Proceso de datos recibidos
 - **Estabilidad**: Estable
 - **Comentarios**
   
-CU-13: Serialización de la información
+RF-13: Serialización de la información
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Versión**: 
@@ -367,7 +367,7 @@ CU-13: Serialización de la información
 - **Poscondición**
 - **Excepciones**:
 
-    + **Un tipo de dato no es serializable**: La herramienta de conversión emitirá un error que será procesado por el caso de uso **CU-4**.
+    + **Un tipo de dato no es serializable**: La herramienta de conversión emitirá un error que será procesado por el caso de uso **RF-4**.
 - **Rendimiento**
 - **Frecuencia**
 - **Importancia**
@@ -376,7 +376,7 @@ CU-13: Serialización de la información
 - **Estabilidad**
 - **Comentarios**: Generalmente se delegará la tarea de la conversión a bibliotecas incluidas en el sistema o herramientas de terceros. 
 
-CU-14: Consulta sobre la información sobre un servicio
+RF-14: Consulta sobre la información sobre un servicio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Versión**: 

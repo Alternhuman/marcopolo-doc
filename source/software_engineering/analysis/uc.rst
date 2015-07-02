@@ -4,16 +4,17 @@ Diagramas de casos de uso
 Paquete de casos de uso
 -----------------------
 
-.. image:: ../img/cu_paquetes.*
+.. figure:: ../img/cu_paquetes.*
+	:align: center
 
 Paquete Marco
 ~~~~~~~~~~~~~
 
-.. image:: ../img/cu_Marco.*
+.. figure:: ../img/cu_Marco.*
     :align: center
 
 Paquete Polo
 ~~~~~~~~~~~~
 
-.. image:: ../img/cu_Polo.*
+.. figure:: ../img/cu_Polo.*
     :align: center

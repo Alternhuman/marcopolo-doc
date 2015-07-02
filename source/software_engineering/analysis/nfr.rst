@@ -3,8 +3,8 @@ Identificación de requisitos no funcionales
 
 Los siguientes requisitos no funcionales son especificados:
 
-CU-1: Comunicación
-------------------
+NFR-1: Comunicación
+-------------------
 
 - **Versión**
 - **Autores**
@@ -19,8 +19,8 @@ CU-1: Comunicación
 - **Comentarios**
   
 
-CU-2: Minimalismo
------------------
+NFR-2: Minimalismo
+------------------
 
 - **Versión**
 - **Autores**
@@ -34,8 +34,8 @@ CU-2: Minimalismo
 - **Estabilidad**: Estable
 - **Comentarios**
 
-CU-3: Portabilidad
-------------------
+NFR-3: Portabilidad
+-------------------
 
 - **Versión**
 - **Autores**
@@ -50,8 +50,8 @@ CU-3: Portabilidad
 - **Comentarios**
 
 
-CU-4: Integrabilidad
---------------------
+NFR-4: Integrabilidad
+---------------------
 
 - **Versión**
 - **Autores**
@@ -66,8 +66,8 @@ CU-4: Integrabilidad
 - **Comentarios**
 
 
-CU-5: Independencia del lenguaje
---------------------------------
+NFR-5: Independencia del lenguaje
+---------------------------------
 
 - **Versión**
 - **Autores**
@@ -81,8 +81,8 @@ CU-5: Independencia del lenguaje
 - **Estabilidad**: Estable
 - **Comentarios**
 
-CU-6: Separación del protocolo y la implementación
---------------------------------------------------
+NFR-6: Separación del protocolo y la implementación
+---------------------------------------------------
 
 - **Versión**
 - **Autores**
@@ -96,8 +96,8 @@ CU-6: Separación del protocolo y la implementación
 - **Estabilidad**: Estable
 - **Comentarios**
 
-CU-7: Gestión de errores
-------------------------
+NFR-7: Gestión de errores
+-------------------------
 
 - **Versión**
 - **Autores**
@@ -112,8 +112,8 @@ CU-7: Gestión de errores
 - **Comentarios**
 
 
-CU-8: Separación de roles
--------------------------
+NFR-8: Separación de roles
+--------------------------
 
 - **Versión**
 - **Autores**
@@ -128,8 +128,8 @@ CU-8: Separación de roles
 - **Comentarios**
 
 
-CU-9: Estándares de comunicación y representación de información
-----------------------------------------------------------------
+NFR-9: Estándares de comunicación y representación de información
+-----------------------------------------------------------------
 
 - **Versión**
 - **Autores**
@@ -145,8 +145,8 @@ CU-9: Estándares de comunicación y representación de información
 
 
 
-CU-10: Configurabilidad
------------------------
+NFR-10: Configurabilidad
+------------------------
 
 - **Versión**
 - **Autores**
@@ -160,8 +160,8 @@ CU-10: Configurabilidad
 - **Estabilidad**: Estable
 - **Comentarios**
 
-CU-11: Sincronización
----------------------
+NFR-11: Sincronización
+----------------------
 
 - **Versión**
 - **Autores**
@@ -176,8 +176,8 @@ CU-11: Sincronización
 - **Comentarios**
 
 
-CU-12: Documentación
---------------------
+NFR-12: Documentación
+---------------------
 
 - **Versión**
 - **Autores**
@@ -195,8 +195,8 @@ CU-12: Documentación
 - **Comentarios**
 
 
-CU-13: Homogeneidad
--------------------
+NFR-13: Homogeneidad
+--------------------
 
 - **Versión**
 - **Autores**
@@ -211,8 +211,8 @@ CU-13: Homogeneidad
 - **Comentarios**
 
 
-CU-14: Calidad del software
----------------------------
+NFR-14: Calidad del software
+----------------------------
 
 - **Versión**
 - **Autores**
@@ -227,8 +227,8 @@ CU-14: Calidad del software
 - **Comentarios**
 
 
-CU-15: Comunicación no fiable
------------------------------
+NFR-15: Comunicación no fiable
+------------------------------
 
 - **Versión**
 - **Autores**
@@ -245,8 +245,8 @@ CU-15: Comunicación no fiable
     + Por naturaleza, los mensajes *multicast* se deben enviar en UDP obligatoriamente.
     + En los casos en los que este tipo de comunicación no posibilite alguna acción, se utilizará un protocolo orientado a conexión, como TCP. Un ejemplo son las conexiones cifradas.
 
-CU-16: Gestión de usuarios
---------------------------
+NFR-16: Gestión de usuarios
+---------------------------
 
 - **Versión**
 - **Autores**
@@ -260,8 +260,8 @@ CU-16: Gestión de usuarios
 - **Estabilidad**: Estable
 - **Comentarios**
 
-CU-17: Sencillez de la API
---------------------------
+NFR-17: Sencillez de la API
+---------------------------
 
 - **Versión**
 - **Autores**
@@ -275,8 +275,8 @@ CU-17: Sencillez de la API
 - **Estabilidad**: Estable
 - **Comentarios**
 
-CU-18: Documentación del código
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+NFR-18: Documentación del código
+--------------------------------
 
 - **Versión**
 - **Autores**
