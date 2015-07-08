@@ -1,12 +1,12 @@
 Requisitos funcionales
-----------------------
+======================
 
 RF-1: Descubrimiento de nodos
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
-- **Versión**: 
-- **Autores**: 
-- **Fuentes**: 
+- **Versión**: 1.5
+- **Autores**: Diego Martín
+- **Fuentes**: Fases de análisis
 - **Objetivos asociados**: 
 - **Requisitos asociados**: 
 - **Descripción**: A petición de un usuario o aplicación, una instancia del *software* realizará una operación de descubrimiento de los diferentes nodos presentes en la red.
@@ -24,20 +24,19 @@ RF-1: Descubrimiento de nodos
 - **Excepciones**
 
     + **No se puede establecer una conexión con la instancia de Marco**: En este caso el conector envía un mensaje de error específico para cada plataforma (excepción, código de estado...) indicando esta situación, con el objetivo de que la aplicación pueda recuperarse del error (asumir unos valores por defecto que sustituyan a los datos solicitados, realizar la operación de nuevo...).
-- **Rendimiento**:
-- **Frecuencia**:
-- **Importancia**:
+- **Rendimiento**: Alto
+- **Frecuencia**: Alta
+- **Importancia**: Muy alta
 - **Urgencia**: Muy urgente
 - **Estado**: Completo
 - **Estabilidad**: Estable
-- **Comentarios**
 
 RF-2: Descubrimiento de servicios
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
-- **Versión**: 
-- **Autores**: 
-- **Fuentes**: 
+- **Versión**: 1
+- **Autores**: Diego Martín
+- **Fuentes**: Fases de desarrollo del sistema
 - **Objetivos asociados**: 
 - **Requisitos asociados**: 
 - **Descripción**: Los diferentes usuarios del sistema podrán realizar operaciones de descubrimiento de servicios ofrecidos por los diferentes nodos que conforman el sistema.
@@ -57,21 +56,19 @@ RF-2: Descubrimiento de servicios
     
     + **No se puede establecer una conexión con la instancia de Marco**: En este caso el conector envía un mensaje de error específico para cada plataforma (excepción, código de estado...) indicando esta situación, con el objetivo de que la aplicación pueda recuperarse del error (asumir unos valores por defecto que sustituyan a los datos solicitados, realizar la operación de nuevo...).
 
-- **Rendimiento**
-- **Frecuencia**
+- **Rendimiento**: Alto
+- **Frecuencia**: Alta
 - **Importancia**: Alta
 - **Urgencia**: Elevada
 - **Estado**: Completo
 - **Estabilidad**: Estable
-- **Comentarios**
-
 
 RF-3: Consulta a un nodo
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
-- **Versión**: 
-- **Autores**: 
-- **Fuentes**: 
+- **Versión**: 1
+- **Autores**: Diego Martín 
+- **Fuentes**: Fases de desarrollo del sistema
 - **Objetivos asociados**: 
 - **Requisitos asociados**: 
 - **Descripción**: El software podrá realizar operaciones de consulta a un nodo específico en la red.
@@ -96,14 +93,13 @@ RF-3: Consulta a un nodo
 - **Urgencia**: Muy alta
 - **Estado**: Completo
 - **Estabilidad**: Estable
-- **Comentarios**
 
 RF-4: Error
-~~~~~~~~~~~
+-----------
 
-- **Versión**: 
-- **Autores**: 
-- **Fuentes**: 
+- **Versión**: 1
+- **Autores**: Diego Martín 
+- **Fuentes**: Fase de análisis
 - **Objetivos asociados**: 
 - **Requisitos asociados**: 
 - **Descripción**: En caso de que se produzca un error en una tarea, se analiza la situación que ha desencadenado dicho estado y se ofrecen al usuario, en caso de que sea posible, opciones de recuperación.
@@ -122,14 +118,13 @@ RF-4: Error
 - **Urgencia**: Alta
 - **Estado**: Completo
 - **Estabilidad**: Estable
-- **Comentarios**
 
 RF-5 Publicar un servicio
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
  
-- **Versión**: 
-- **Autores**: 
-- **Fuentes**: 
+- **Versión**: 1
+- **Autores**: Diego Martín 
+- **Fuentes**: Fases de desarrollo
 - **Objetivos asociados**: 
 - **Requisitos asociados**: 
 - **Descripción**: Un usuario con los privilegios adecuados podrá publicar un servicio para todo el sistema que será incluido en la lista de servicios a ofrecer.
@@ -155,11 +150,11 @@ RF-5 Publicar un servicio
 - **Comentarios**: Este tipo de servicios son conocidos como "raíz" (*root*), y no incluyen en el identificador el nombre del usuario que los ha publicado. Si bien el valor de retorno no es de importancia en este tipo de servicios (pues es idéntico al del identificador solicitado), se incluye para homogeneizar los diferentes puntos de entrada, posibilitando en una misma función la publicación de diferentes tipos de servicios. 
 
 RF-6 Publicar un servicio de usuario
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------
 
-- **Versión**: 
-- **Autores**: 
-- **Fuentes**: 
+- **Versión**: 1
+- **Autores**: Diego Martín 
+- **Fuentes**: Evaluación de usuarios
 - **Objetivos asociados**: 
 - **Requisitos asociados**: 
 - **Descripción**: Se contempla la posibilidad de que cualquier usuario pueda publicar servicios aprovechando una instancia de Polo local. Sin embargo, estos servicios contarán con una serie de limitaciones respecto a los servicios publicados por usuarios sin privilegios.
@@ -175,20 +170,19 @@ RF-6 Publicar un servicio de usuario
     + **No se puede establecer una conexión con la instancia de Polo**: En este caso el conector envía un mensaje de error específico para cada plataforma (excepción, código de estado...) indicando esta situación, con el objetivo de que la aplicación pueda recuperarse del error (asumir unos valores por defecto que sustituyan a los datos solicitados, realizar la operación de nuevo...).
     + **Los parámetros son inválidos**: Generalmente el mecanismo de interconexión detectará este tipo de situaciones, retornando un mensaje de error (a través de una excepción, un código de retorno) al usuario. En caso de que el error sea detectado por la instancia de Polo, esta solicitará al conector que informe al usuario, aprovechando el mismo método de notificación.
     + **El identificador ya se encuentra en uso**: A través del mecanismo de notificación de errores utilizado en el resto de excepciones se indica esta situación. Sin embargo, el tipo de error deberá ser diferente (no se viola ninguna regla semántica, simplemente se solicita la inclusión de un identificador de servicio ya publicado).
-- **Rendimiento**
-- **Frecuencia**
+- **Rendimiento**: Medio
+- **Frecuencia**: Media
 - **Importancia**: Alta
 - **Urgencia**: Alta
 - **Estado**: Completo
 - **Estabilidad**: Estable
-- **Comentarios**
 
 RF-7 Eliminar un servicio
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
     
-- **Versión**: 
-- **Autores**: 
-- **Fuentes**: 
+- **Versión**: 1
+- **Autores**: Diego Martín 
+- **Fuentes**: Fases de desarrollo
 - **Objetivos asociados**: 
 - **Requisitos asociados**: 
 - **Descripción**: En caso de que una aplicación (generalmente, la ofertante) o un usuario (generalmente el propietario) decidan eliminar un servicio de la lista de ofrecidos, la instancia local de Polo deberá realizar dicha operación. 
@@ -204,20 +198,19 @@ RF-7 Eliminar un servicio
 
     + **No se puede establecer una conexión con la instancia de Polo**: En este caso el conector envía un mensaje de error específico para cada plataforma (excepción, código de estado...) indicando esta situación, con el objetivo de que la aplicación pueda recuperarse del error (asumir unos valores por defecto que sustituyan a los datos solicitados, realizar la operación de nuevo...).
     + **Los parámetros son inválidos**: Generalmente el mecanismo de interconexión detectará este tipo de situaciones, retornando un mensaje de error (a través de una excepción, un código de retorno) al usuario. En caso de que el error sea detectado por la instancia de Polo, esta solicitará al conector que informe al usuario, aprovechando el mismo método de notificación.
-- **Rendimiento**
-- **Frecuencia**
+- **Rendimiento**: Alto
+- **Frecuencia**: Media
 - **Importancia**: Alta
 - **Urgencia**: Alta
 - **Estado**: Completo
 - **Estabilidad**: Estable
-- **Comentarios**
 
 RF-8: Eliminar servicio de usuario
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------
 
-- **Versión**: 
-- **Autores**: 
-- **Fuentes**: 
+- **Versión**: 1
+- **Autores**: Diego Martín 
+- **Fuentes**: Fase de análisis
 - **Objetivos asociados**: 
 - **Requisitos asociados**: 
 - **Descripción**: En caso de que una aplicación (generalmente, la ofertante) o un usuario (generalmente el propietario) decidan eliminar un servicio no global de la lista de ofrecidos, la instancia local de Polo deberá realizar dicha operación. 
@@ -231,20 +224,19 @@ RF-8: Eliminar servicio de usuario
     
     + **No se puede establecer una conexión con la instancia de Polo**: En este caso el conector envía un mensaje de error específico para cada plataforma (excepción, código de estado...) indicando esta situación, con el objetivo de que la aplicación pueda recuperarse del error (asumir unos valores por defecto que sustituyan a los datos solicitados, realizar la operación de nuevo...).
     + **Los parámetros son inválidos**: Generalmente el mecanismo de interconexión detectará este tipo de situaciones, retornando un mensaje de error (a través de una excepción, un código de retorno) al usuario. En caso de que el error sea detectado por la instancia de Polo, esta solicitará al conector que informe al usuario, aprovechando el mismo método de notificación.
-- **Rendimiento**
-- **Frecuencia**
+- **Rendimiento**: Alto
+- **Frecuencia**: Media
 - **Importancia**: Alta
 - **Urgencia**: Alta
 - **Estado**: Completo
 - **Estabilidad**: Estable
-- **Comentarios**
 
 RF-9 Creación de un servicio estático
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------
 
-- **Versión**: 
-- **Autores**: 
-- **Fuentes**: 
+- **Versión**: 1
+- **Autores**: Diego Martín 
+- **Fuentes**: Fase de análisis y de desarrollo del sistema
 - **Objetivos asociados**: 
 - **Requisitos asociados**: 
 - **Descripción**: Un servicio estático es aquel que es registrado en un fichero de texto, y por tanto es persistente (en caso de que el sistema sea reiniciado no se pierde la información). Todos los usuarios podrán publicar este tipo de servicios, sujetos a las mismas restricciones que el resto de variedades, a partir de ahora denominados servicios "dinámicos".
@@ -258,22 +250,21 @@ RF-9 Creación de un servicio estático
 - **Excepciones**:
 
     + Si la sintaxis es inválida, el servicio no es publicado y se almacena un mensaje de error en un registro..
-- **Rendimiento**
-- **Frecuencia**
+- **Rendimiento**: Alto
+- **Frecuencia**: Media
 - **Importancia**: Alta
 - **Urgencia**: Alta
 - **Estado**: Completo
 - **Estabilidad**: Estable
-- **Comentarios**
 
 .. TODO: CU8, ver NFR
 
 RF-10 Modificar servicio
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
-- **Versión**: 
-- **Autores**: 
-- **Fuentes**: 
+- **Versión**: 1
+- **Autores**: Diego Martín 
+- **Fuentes**: Fases de desarrollo del sistema
 - **Objetivos asociados**: 
 - **Requisitos asociados**: 
 - **Descripción**: La información adicional que un servicio ofrece puede ser modificada tras ser publicado.
@@ -288,24 +279,22 @@ RF-10 Modificar servicio
     
     + **No se puede establecer una conexión con la instancia de Polo**: En este caso el conector envía un mensaje de error específico para cada plataforma (excepción, código de estado...) indicando esta situación, con el objetivo de que la aplicación pueda recuperarse del error (asumir unos valores por defecto que sustituyan a los datos solicitados, realizar la operación de nuevo...).
     + **Los parámetros son inválidos**: Generalmente el mecanismo de interconexión detectará este tipo de situaciones, retornando un mensaje de error (a través de una excepción, un código de retorno) al usuario. En caso de que el error sea detectado por la instancia de Polo, esta solicitará al conector que informe al usuario, aprovechando el mismo método de notificación.
-- **Rendimiento**
-- **Frecuencia**
+- **Rendimiento**: Medio
+- **Frecuencia**: Media
 - **Importancia**: Media
 - **Urgencia**: Media
-- **Estado**: Completo
+- **Estado**: Parcialmente completo
 - **Estabilidad**: Estable
-- **Comentarios**
 
 RF-11 Modificar servicio de usuario
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------
 
-- **Versión**: 
-- **Autores**: 
-- **Fuentes**: 
+- **Versión**: 1
+- **Autores**: Diego Martín 
+- **Fuentes**: Fases de desarrollo
 - **Objetivos asociados**: 
 - **Requisitos asociados**: 
 - **Descripción**: La información adicional que un servicio no global ofrece puede ser modificada tras ser publicado.
-- **Precondición**
 - **Secuencia normal**:
 
     1. Se solicita a través de uno de los mecanismos de interconexión la modificación de un servicio, indicando dicha acción a uno de los elementos de interconexión presentes. En la invocación se incluyen los valores a incluir.
@@ -315,20 +304,19 @@ RF-11 Modificar servicio de usuario
 
     + **No se puede establecer una conexión con la instancia de Polo**: En este caso el conector envía un mensaje de error específico para cada plataforma (excepción, código de estado...) indicando esta situación, con el objetivo de que la aplicación pueda recuperarse del error (asumir unos valores por defecto que sustituyan a los datos solicitados, realizar la operación de nuevo...).
     + **Los parámetros son inválidos**: Generalmente el mecanismo de interconexión detectará este tipo de situaciones, retornando un mensaje de error (a través de una excepción, un código de retorno) al usuario. En caso de que el error sea detectado por la instancia de Polo, esta solicitará al conector que informe al usuario, aprovechando el mismo método de notificación.
-- **Rendimiento**
-- **Frecuencia**
+- **Rendimiento**: Medio
+- **Frecuencia**: Media
 - **Importancia**: Media
 - **Urgencia**: Media
-- **Estado**: Completo
+- **Estado**: Parcialmente completo
 - **Estabilidad**: Estable
-- **Comentarios**
 
 RF-12: Proceso de datos recibidos
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
-- **Versión**: 
-- **Autores**: 
-- **Fuentes**: 
+- **Versión**: 1
+- **Autores**: Diego Martín 
+- **Fuentes**: Fase de análisis
 - **Objetivos asociados**: 
 - **Requisitos asociados**: 
 - **Descripción**: Las diferentes secuencias de comunicación requieren un procesado del contenido de los mensajes recibidos. Dado que todos los mensajes siguen una estructura similar, su procesado es idéntico.
@@ -342,20 +330,19 @@ RF-12: Proceso de datos recibidos
 - **Excepciones**: 
 
     + En caso de que el procesamiento de la cadena emita un error (por fallos en la estructura de la misma), comienza el caso de uso **RF-4**.
-- **Rendimiento**
-- **Frecuencia**
+- **Rendimiento**: Alto
+- **Frecuencia**: Alta
 - **Importancia**: Media
 - **Urgencia**: Media
 - **Estado**: Completo 
 - **Estabilidad**: Estable
-- **Comentarios**
   
 RF-13: Serialización de la información
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------
 
-- **Versión**: 
-- **Autores**: 
-- **Fuentes**: 
+- **Versión**: 1
+- **Autores**: Diego Martín 
+- **Fuentes**: Fase de análisis
 - **Objetivos asociados**: 
 - **Requisitos asociados**: 
 - **Descripción**: Los diferentes datos a transmitir han de ser estructurados siguiendo las especificaciones del requisito no funcional **NFR9**.
@@ -368,20 +355,20 @@ RF-13: Serialización de la información
 - **Excepciones**:
 
     + **Un tipo de dato no es serializable**: La herramienta de conversión emitirá un error que será procesado por el caso de uso **RF-4**.
-- **Rendimiento**
-- **Frecuencia**
-- **Importancia**
-- **Urgencia**
-- **Estado**
-- **Estabilidad**
+- **Rendimiento**: Alto
+- **Frecuencia**: Alta
+- **Importancia**: Muy alta
+- **Urgencia**: Alta
+- **Estado**: Completo
+- **Estabilidad**: Estable
 - **Comentarios**: Generalmente se delegará la tarea de la conversión a bibliotecas incluidas en el sistema o herramientas de terceros. 
 
 RF-14: Consulta sobre la información sobre un servicio
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------------------
 
-- **Versión**: 
-- **Autores**: 
-- **Fuentes**: 
+- **Versión**: 1
+- **Autores**: Diego Martín 
+- **Fuentes**: Fases de desarrollo
 - **Objetivos asociados**: 
 - **Requisitos asociados**: 
 - **Descripción**: Es posible realizar consultas a la instancia local de Polo sobre los servicios que ofrece.
@@ -396,13 +383,12 @@ RF-14: Consulta sobre la información sobre un servicio
 - **Excepciones**: 
 
     + **No se dispone de información sobre el servicio indicado**: Se indica esta condición con un mensaje o código informativo.
-- **Rendimiento**
-- **Frecuencia**
+- **Rendimiento**: Alta
+- **Frecuencia**: Media
 - **Importancia**: Baja
 - **Urgencia**: Baja
 - **Estado**: Por completar
 - **Estabilidad**: Baja
-- **Comentarios**
 
 .. rubric:: Casos de uso
 
@@ -412,7 +398,7 @@ RF-14: Consulta sobre la información sobre un servicio
 
 .. 
     - **Versión**: 
-    - **Autores**: 
+    - **Autores**: Diego Martín 
     - **Fuentes**: 
     - **Objetivos asociados**: 
     - **Requisitos asociados**: 

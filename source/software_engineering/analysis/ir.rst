@@ -4,9 +4,9 @@ Requisitos de información
 IRQ-1 Servicios publicitados
 ----------------------------
 
-- **Versión**
-- **Autores**
-- **Fuentes**
+- **Versión**: 1.5
+- **Autores**: Diego Martín
+- **Fuentes**: Fases de desarrollo del sistema
 - **Objetivos asociados**
 - **Requisitos asociados**
 - **Descripción**: El sistema creará y gestionará toda la información relativa a los diferentes servicios a publicitar.
@@ -22,9 +22,9 @@ IRQ-1 Servicios publicitados
 IRQ-2 Información de usuarios
 -----------------------------
 
-- **Versión**
-- **Autores**
-- **Fuentes**
+- **Versión**: 1.5
+- **Autores**: Diego Martín
+- **Fuentes**: Fases de desarrollo del sistema
 - **Objetivos asociados**
 - **Requisitos asociados**
 - **Descripción**:El sistema deberá consultar la fuente de datos de los usuarios presentes en el sistema con el objetivo de determinar los privilegios de cada uno de ellos.
@@ -40,9 +40,9 @@ IRQ-2 Información de usuarios
 IRQ-3 Registros
 ---------------
 
-- **Versión**
-- **Autores**
-- **Fuentes**
+- **Versión**: 1
+- **Autores**: Diego Martín
+- **Fuentes**: Fases de desarrollo del sistema
 - **Objetivos asociados**
 - **Requisitos asociados**
 - **Descripción**: Diferentes ficheros de registro se crearán con el objetivo de facilitar la monitorización de las diferentes tareas del sistema, el análisis de comportamientos erráticos en la ejecución, etcétera.

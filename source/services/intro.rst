@@ -17,7 +17,7 @@ Static services
 
 -- The ``params`` is an JSON object of custom parameters, useful for filtering, information about the service, etc. The values of each parameter can only be basic types (no nested arrays/objects are allowed). It is an optional parameter.
 
--- The ``groups`` parameter is optional and specifies the groups where the service has to be published. If not supplied, the service will be published in all the multicast groups configured for the :doc:`Polo </daemons/polo>` instance. The parameter must be an array of IP strings. **Note** that only those groups where Polo is configured to work are valid, and the service will not be published in any other multicast group configured in the service file.
+-- The ``groups`` parameter is optional and specifies the groups where the service has to be published. If not supplied, the service will be published in all the multicast groups configured for the Polo instance. The parameter must be an array of IP strings. **Note** that only those groups where Polo is configured to work are valid, and the service will not be published in any other multicast group configured in the service file.
 
 -- The ``disabled`` parameter is optional, and if defined and set to ``true`` will disable the service publication in all groups. Otherwise it will be ignored.	
 

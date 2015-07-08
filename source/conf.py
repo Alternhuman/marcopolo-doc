@@ -18,8 +18,8 @@ import os
 import shlex
 
 
-root_folder = os.path.join("../", os.path.realpath(__file__))
-src_folder = os.path.join(root_folder, "marcopolo")
+sys.path.insert(0, "../marcopolo")
+sys.path.insert(0, "../marcopolo-bindings/marcopolo-bindings-python")
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -41,6 +41,7 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
     'sphinxcontrib.exceltable',
+    'sphinx.ext.viewcode',
 ]
 
 # Add any paths that contain templates here, relative to this directory.

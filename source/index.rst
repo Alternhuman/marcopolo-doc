@@ -7,7 +7,7 @@
 Welcome to MarcoPolo's documentation!
 =====================================
 
-MarcoPolo is a service discovery protocol based on multicast networking designed for Local-Area Networks.
+MarcoPolo is a service discovery protocol based on multicast networking designed for Local-Area Networks. It is bindable to multiple languages and integrates easily with preexisting *software*.
 
 .. toctree::
    :maxdepth: 1

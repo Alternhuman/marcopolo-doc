@@ -11,12 +11,10 @@ The underlying architecture of the proposed implementation is defined on two ind
 - A :doc:`/fundamentals/polo` instance running as a daemon process listen continually for incoming multicast in a certain (configurable) group (or groups), sending responses to a request if this satisfies a set of conditions (same multicast group, request for a service which is offered by the node...).
 
 - A set of configuration files for both modules.
-
 - A set of service configuration files which describe the features of each service.
-
 - All messages are codified as JSON messages and sent encoded as UTF-8 strings.
-
 - A set of bindings for Python, C/C++ and Java.
+- Several bash utilities.
 
 The software is implemented on Python using Twisted [2]_ as the tool to manage the asynchronous sockets.
 

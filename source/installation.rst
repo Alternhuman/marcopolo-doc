@@ -3,7 +3,7 @@ Installation
 
 MarcoPolo is distributed as a Python package that includes the Marco and Polo functionality. When installed, the package copies the MarcoPolo python classes to a proper location, sets several shell commands, creates the auxiliary files and configures the daemon manager of the operating system to include Marco and Polo.
 
-The package can be downloaded from the releases page or be installed directly using `Pip <https://pip.pypa.io/en/stable/>`_.
+The package can be downloaded from the releases page or be installed directly using `pip <https://pip.pypa.io/en/stable/>`_.
 
 Dependencies
 ------------
@@ -42,7 +42,7 @@ By default, the installation creates the daemon files, and enables only the marc
 Daemons
 -------
 
-MarcoPolo has been tested to work in System V and systemd-based distributions. ``setup.py`` will detect which one is present in the machine and configure MarcoPolo accordingly. Please see :doc:`/daemons/introduction` for more information about the daemons.
+MarcoPolo has been tested to work in System V and systemd-based distributions. ``setup.py`` will detect which one is present in the machine and configure MarcoPolo accordingly. Please see :doc:`/daemons/intro` for more information about the daemons.
 
 Python 2 and 3
 ~~~~~~~~~~~~~~
@@ -67,14 +67,12 @@ Directories and files
 The following files are created:
 
 - ``/etc/marcopolo`` directory:
-	
-	- ``marcopolo.conf``: General configuration options
 
 	- ``daemon``: If installed using Python 2, the folder will contain the .tac files necessary for twistd to run.
 
-	- ``marco/marco.conf``: Marco configuration parameters.
+	- ``marco/marco.cfg``: Marco configuration parameters.
 
-	- ``polo/polo.conf``: Polo configuration parameters.
+	- ``polo/polo.cfg``: Polo configuration parameters.
 
 	- ``polo/services/``: Service description files.
 

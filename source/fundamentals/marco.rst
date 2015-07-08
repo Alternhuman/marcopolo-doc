@@ -12,7 +12,7 @@ A datagram example is the following:
 		"Params":"statusmonitor"
 	}
 
-All messages are JSON-formatted and UTF-8 encoded. Currently there is no support for fragmentation, so the messages must be less than 2048 bytes long.
+All messages are JSON-formatted and UTF-8 encoded. Currently there is no support for fragmentation. The messages must be less than 4096 bytes long.
 
 When a **Request-For** message like the one in the example is received by the **Polo** instance, a reply is issued only if the service is configured to be published. Otherwise no response will be made. The **Marco** instance will wait for a configurable amount of time, and return the received responses when the timeout is triggered. There are several parameters which modify this default behaviour, such as retries or timeout modification.
 
