@@ -1,5 +1,5 @@
 Fase de diseño
---------------
+==============
 
 En esta fase se detallan las diferentes decisiones de diseño llevadas a cabo para la construcción del servicio.
 
@@ -12,6 +12,4 @@ En esta fase se detallan las diferentes decisiones de diseño llevadas a cabo pa
     static
     procedimental
     tests/intro
-.. 
     patterns
-

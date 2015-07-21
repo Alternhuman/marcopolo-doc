@@ -7,8 +7,8 @@ RF-1: Descubrimiento de nodos
 - **Versión**: 1.5
 - **Autores**: Diego Martín
 - **Fuentes**: Fases de análisis
-- **Objetivos asociados**: 
-- **Requisitos asociados**: 
+- **Objetivos asociados**: OBJ-1, OBJ-2
+- **Requisitos asociados**: NFR-1, NFR-9, NFR-15
 - **Descripción**: A petición de un usuario o aplicación, una instancia del *software* realizará una operación de descubrimiento de los diferentes nodos presentes en la red.
 - **Precondición**: La instancia de Marco debe haber sido iniciado previamente.
 - **Secuencia normal**:
@@ -21,7 +21,7 @@ RF-1: Descubrimiento de nodos
     6. El conector determina si los datos son válidos y los retorna a la aplicación. En caso contrario, comienza el caso de uso **RF-4**.
 
 - **Poscondición**: Se han descubierto los diferentes nodos presentes en el sistema.
-- **Excepciones**
+- **Excepciones**:
 
     + **No se puede establecer una conexión con la instancia de Marco**: En este caso el conector envía un mensaje de error específico para cada plataforma (excepción, código de estado...) indicando esta situación, con el objetivo de que la aplicación pueda recuperarse del error (asumir unos valores por defecto que sustituyan a los datos solicitados, realizar la operación de nuevo...).
 - **Rendimiento**: Alto
@@ -37,8 +37,8 @@ RF-2: Descubrimiento de servicios
 - **Versión**: 1
 - **Autores**: Diego Martín
 - **Fuentes**: Fases de desarrollo del sistema
-- **Objetivos asociados**: 
-- **Requisitos asociados**: 
+- **Objetivos asociados**: OBJ-1, OBJ-2
+- **Requisitos asociados**: IRQ-1, NFR-8, NFR-15
 - **Descripción**: Los diferentes usuarios del sistema podrán realizar operaciones de descubrimiento de servicios ofrecidos por los diferentes nodos que conforman el sistema.
 - **Precondición**: La instancia de Marco debe haber sido iniciado previamente.
 - **Secuencia normal**:
@@ -69,8 +69,8 @@ RF-3: Consulta a un nodo
 - **Versión**: 1
 - **Autores**: Diego Martín 
 - **Fuentes**: Fases de desarrollo del sistema
-- **Objetivos asociados**: 
-- **Requisitos asociados**: 
+- **Objetivos asociados**: OBJ-1, OBJ-2
+- **Requisitos asociados**: IRQ-1, NFR-15
 - **Descripción**: El software podrá realizar operaciones de consulta a un nodo específico en la red.
 - **Precondición**: La instancia de Marco debe haber sido iniciado previamente.
 - **Secuencia normal**:
@@ -87,8 +87,8 @@ RF-3: Consulta a un nodo
 
     + **No se puede establecer una conexión con la instancia de Marco**: En este caso el conector envía un mensaje de error específico para cada plataforma (excepción, código de estado...) indicando esta situación, con el objetivo de que la aplicación pueda recuperarse del error (asumir unos valores por defecto que sustituyan a los datos solicitados, realizar la operación de nuevo...).
     + **El nodo no se encuentra presente en la red**: El usuario es notificado de esta situación. 
-- **Rendimiento**
-- **Frecuencia**:
+- **Rendimiento**: Alto
+- **Frecuencia**: Alta
 - **Importancia**: Alta
 - **Urgencia**: Muy alta
 - **Estado**: Completo
@@ -100,8 +100,7 @@ RF-4: Error
 - **Versión**: 1
 - **Autores**: Diego Martín 
 - **Fuentes**: Fase de análisis
-- **Objetivos asociados**: 
-- **Requisitos asociados**: 
+- **Requisitos asociados**: NRF-14
 - **Descripción**: En caso de que se produzca un error en una tarea, se analiza la situación que ha desencadenado dicho estado y se ofrecen al usuario, en caso de que sea posible, opciones de recuperación.
 - **Precondición**: Se debe haber producido un error.
 - **Secuencia normal**:
@@ -111,9 +110,9 @@ RF-4: Error
     3. El componente informa al usuario o aplicación, o en su defecto, delega esta tarea a otra entidad en la cadena de comunicación.
     4. El componente determina cuál es el mecanismo de notificación adecuado para la situación dada, y realiza la acción asociada (lanzar una excepción, emitir un código de error, escribir una entrada en un registro...).
 - **Poscondición**: El usuario o aplicación es notificado del error.
-- **Excepciones**
-- **Rendimiento**
-- **Frecuencia**
+- **Excepciones**: No se contemplan excepciones
+- **Rendimiento**: Alto
+- **Frecuencia**: Alta
 - **Importancia**: Media
 - **Urgencia**: Alta
 - **Estado**: Completo
@@ -125,8 +124,8 @@ RF-5 Publicar un servicio
 - **Versión**: 1
 - **Autores**: Diego Martín 
 - **Fuentes**: Fases de desarrollo
-- **Objetivos asociados**: 
-- **Requisitos asociados**: 
+- **Objetivos asociados**: OBJ-2
+- **Requisitos asociados**: IRQ-1
 - **Descripción**: Un usuario con los privilegios adecuados podrá publicar un servicio para todo el sistema que será incluido en la lista de servicios a ofrecer.
 - **Precondición**: Una instancia de Polo debe estar ejecutándose en el sistema.
 - **Secuencia normal**:
@@ -141,8 +140,8 @@ RF-5 Publicar un servicio
     + **No se puede establecer una conexión con la instancia de Polo**: En este caso el conector envía un mensaje de error específico para cada plataforma (excepción, código de estado...) indicando esta situación, con el objetivo de que la aplicación pueda recuperarse del error (asumir unos valores por defecto que sustituyan a los datos solicitados, realizar la operación de nuevo...).
     + **Los parámetros son inválidos**: Generalmente el mecanismo de interconexión detectará este tipo de situaciones, retornando un mensaje de error (a través de una excepción, un código de retorno) al usuario. En caso de que el error sea detectado por la instancia de Polo, esta solicitará al conector que informe al usuario, aprovechando el mismo método de notificación.
     + **El identificador ya se encuentra en uso**: A través del mecanismo de notificación de errores utilizado en el resto de excepciones se indica esta situación. Sin embargo, el tipo de error deberá ser diferente (no se viola ninguna regla semántica, simplemente se solicita la inclusión de un identificador de servicio ya publicado).
-- **Rendimiento**
-- **Frecuencia**
+- **Rendimiento**: Alto
+- **Frecuencia**: Alto
 - **Importancia**: Alta
 - **Urgencia**: Alta
 - **Estado**: Completo
@@ -155,8 +154,8 @@ RF-6 Publicar un servicio de usuario
 - **Versión**: 1
 - **Autores**: Diego Martín 
 - **Fuentes**: Evaluación de usuarios
-- **Objetivos asociados**: 
-- **Requisitos asociados**: 
+- **Objetivos asociados**: OBJ-2
+- **Requisitos asociados**: NFR-16
 - **Descripción**: Se contempla la posibilidad de que cualquier usuario pueda publicar servicios aprovechando una instancia de Polo local. Sin embargo, estos servicios contarán con una serie de limitaciones respecto a los servicios publicados por usuarios sin privilegios.
 - **Precondición**: Una instancia de Polo debe estar ejecutándose en el sistema.
 - **Secuencia normal**:
@@ -183,8 +182,8 @@ RF-7 Eliminar un servicio
 - **Versión**: 1
 - **Autores**: Diego Martín 
 - **Fuentes**: Fases de desarrollo
-- **Objetivos asociados**: 
-- **Requisitos asociados**: 
+- **Objetivos asociados**: OBJ-2
+- **Requisitos asociados**: IRQ-1, NFR-1
 - **Descripción**: En caso de que una aplicación (generalmente, la ofertante) o un usuario (generalmente el propietario) decidan eliminar un servicio de la lista de ofrecidos, la instancia local de Polo deberá realizar dicha operación. 
 - **Precondición**: Una instancia de Polo debe estar ejecutándose en el sistema.
 - **Secuencia normal**:
@@ -211,8 +210,8 @@ RF-8: Eliminar servicio de usuario
 - **Versión**: 1
 - **Autores**: Diego Martín 
 - **Fuentes**: Fase de análisis
-- **Objetivos asociados**: 
-- **Requisitos asociados**: 
+- **Objetivos asociados**: OBJ-2
+- **Requisitos asociados**: IRQ-1, NFR-1
 - **Descripción**: En caso de que una aplicación (generalmente, la ofertante) o un usuario (generalmente el propietario) decidan eliminar un servicio no global de la lista de ofrecidos, la instancia local de Polo deberá realizar dicha operación. 
 - **Precondición**: Una instancia de Polo debe estar ejecutándose en el sistema.
 - **Secuencia normal**:
@@ -237,8 +236,8 @@ RF-9 Creación de un servicio estático
 - **Versión**: 1
 - **Autores**: Diego Martín 
 - **Fuentes**: Fase de análisis y de desarrollo del sistema
-- **Objetivos asociados**: 
-- **Requisitos asociados**: 
+- **Objetivos asociados**: OBJ-2
+- **Requisitos asociados**: IRQ-1, NFR-1
 - **Descripción**: Un servicio estático es aquel que es registrado en un fichero de texto, y por tanto es persistente (en caso de que el sistema sea reiniciado no se pierde la información). Todos los usuarios podrán publicar este tipo de servicios, sujetos a las mismas restricciones que el resto de variedades, a partir de ahora denominados servicios "dinámicos".
 - **Precondición**
 - **Secuencia normal**:
@@ -265,8 +264,8 @@ RF-10 Modificar servicio
 - **Versión**: 1
 - **Autores**: Diego Martín 
 - **Fuentes**: Fases de desarrollo del sistema
-- **Objetivos asociados**: 
-- **Requisitos asociados**: 
+- **Objetivos asociados**: OBJ-2
+- **Requisitos asociados**: IRQ-1, NFR-1
 - **Descripción**: La información adicional que un servicio ofrece puede ser modificada tras ser publicado.
 - **Precondición**: El servicio debe estar publicado en el sistema.
 - **Secuencia normal**:
@@ -292,8 +291,8 @@ RF-11 Modificar servicio de usuario
 - **Versión**: 1
 - **Autores**: Diego Martín 
 - **Fuentes**: Fases de desarrollo
-- **Objetivos asociados**: 
-- **Requisitos asociados**: 
+- **Objetivos asociados**: OBJ-2
+- **Requisitos asociados**: IRQ-1, NFR-1
 - **Descripción**: La información adicional que un servicio no global ofrece puede ser modificada tras ser publicado.
 - **Secuencia normal**:
 
@@ -317,8 +316,8 @@ RF-12: Proceso de datos recibidos
 - **Versión**: 1
 - **Autores**: Diego Martín 
 - **Fuentes**: Fase de análisis
-- **Objetivos asociados**: 
-- **Requisitos asociados**: 
+- **Objetivos asociados**: OBJ-1, OBJ-2, OBJ-3
+- **Requisitos asociados**: IRQ-1, IRQ-2
 - **Descripción**: Las diferentes secuencias de comunicación requieren un procesado del contenido de los mensajes recibidos. Dado que todos los mensajes siguen una estructura similar, su procesado es idéntico.
 - **Precondición**: Un mensaje es recibido como respuesta a un mensaje enviado anteriormente o como inicio de una transmisión.
 - **Secuencia normal**: 
@@ -343,8 +342,8 @@ RF-13: Serialización de la información
 - **Versión**: 1
 - **Autores**: Diego Martín 
 - **Fuentes**: Fase de análisis
-- **Objetivos asociados**: 
-- **Requisitos asociados**: 
+- **Objetivos asociados**: OBJ-1, OBJ-2, OBJ-3
+- **Requisitos asociados**: NFR-1, RF-1, RF-2
 - **Descripción**: Los diferentes datos a transmitir han de ser estructurados siguiendo las especificaciones del requisito no funcional **NFR9**.
 - **Precondición**
 - **Secuencia normal**:
@@ -369,8 +368,8 @@ RF-14: Consulta sobre la información sobre un servicio
 - **Versión**: 1
 - **Autores**: Diego Martín 
 - **Fuentes**: Fases de desarrollo
-- **Objetivos asociados**: 
-- **Requisitos asociados**: 
+- **Objetivos asociados**: OBJ-1, OBJ-2
+- **Requisitos asociados**: RF-13, NFR-1
 - **Descripción**: Es posible realizar consultas a la instancia local de Polo sobre los servicios que ofrece.
 - **Precondición**: Una instancia de Polo debe estar ejecutándose en el sistema.
 - **Secuencia normal**:
